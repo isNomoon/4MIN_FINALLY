@@ -39,7 +39,7 @@ public class PPTSlide : MonoBehaviour
         public string speakerName = "角色名";
 
         [Tooltip("对话内容")]
-        [TextArea(3, 10)]
+        
         public string dialogueText = "这里是对话内容...";
     }
 
