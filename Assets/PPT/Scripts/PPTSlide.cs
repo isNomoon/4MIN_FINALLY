@@ -9,7 +9,8 @@ using UnityEngine.UI;
 public class PPTSlide : MonoBehaviour
 {
     // ---------- 单例 ----------
-    
+    public GameObject gameobject;
+    public GameObject gameobject1;
     private static PPTSlide _instance;
     public static PPTSlide Instance
     {
@@ -83,7 +84,8 @@ public class PPTSlide : MonoBehaviour
     public void NextSlide()
     {
         if (slides.Count == 0) return;
-        ShowSlide((_currentIndex + 1) % slides.Count);
+        ShowSlide((_currentIndex + 1) );
+
     }
 
     /// <summary>显示上一条</summary>
@@ -96,9 +98,12 @@ public class PPTSlide : MonoBehaviour
     /// <summary>显示指定索引（图片 + 名字 + 对话同步切换）</summary>
     public void ShowSlide(int index)
     {
-        if (index < 0 || index >= slides.Count)
+        if (index < 0 || index == slides.Count)
         {
-            Debug.LogError($"索引 {index} 超出范围 (0-{slides.Count - 1})");
+            
+            gameobject.SetActive(false);
+            gameobject1.SetActive(true);
+
             return;
         }
 

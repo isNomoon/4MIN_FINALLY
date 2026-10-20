@@ -7,9 +7,7 @@ using UnityEngine.Events;
 public class TaskBase : MonoBehaviour
 {
     // Start is called before the first frame update
-    [Header("任务信息（用于 UI 显示）")]
-    public string taskTitle = "未命名任务";
-    [TextArea] public string taskInstruction = "";
+    
 
     [Header("完成后额外动作（可选）")]
     public UnityEvent onTaskCompleted;
