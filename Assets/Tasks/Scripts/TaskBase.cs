@@ -32,7 +32,7 @@ public class TaskBase : MonoBehaviour
     }
 
     // ---- 子类按需重写 ----
-    protected virtual void OnBegin() { }
-    protected virtual void OnEnd() { }
+    protected virtual void OnBegin() { this.gameObject.SetActive(true); }
+    protected virtual void OnEnd() { this.gameObject.SetActive(false); }
 }
 

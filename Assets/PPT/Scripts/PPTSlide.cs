@@ -11,6 +11,7 @@ public class PPTSlide : MonoBehaviour
     // ---------- µ¥Àý ----------
     public GameObject gameobject;
     public GameObject gameobject1;
+    public GameObject gameobject2;
     private static PPTSlide _instance;
     public static PPTSlide Instance
     {
@@ -103,7 +104,8 @@ public class PPTSlide : MonoBehaviour
             
             gameobject.SetActive(false);
             gameobject1.SetActive(true);
-
+            gameobject2.SetActive(false);
+            TaskManager.Instance.StartTutorial();
             return;
         }
 

@@ -27,6 +27,7 @@ public class Task1 : TaskBase
 
     protected override void OnBegin()
     {
+        base.OnBegin();
         clickCount = 0;
         lastClickTime = -999f;
         isPressing = false;
@@ -56,6 +57,7 @@ public class Task1 : TaskBase
         // ¸´Ô­Ïà»ú
         if (cam != null) cam.fieldOfView = normalFov;
         isPressing = false;
+        base.OnEnd();
     }
 
     private void Update()
