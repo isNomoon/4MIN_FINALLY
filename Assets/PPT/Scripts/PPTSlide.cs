@@ -9,9 +9,8 @@ using UnityEngine.UI;
 public class PPTSlide : MonoBehaviour
 {
     // ---------- µ¥Àý ----------
-    public GameObject gameobject;
-    public GameObject gameobject1;
-    public GameObject gameobject2;
+    public List<GameObject> gameObjects1 = new List<GameObject>();
+    public List<GameObject> gameObjects2= new List<GameObject>();
     private static PPTSlide _instance;
     public static PPTSlide Instance
     {
@@ -101,10 +100,16 @@ public class PPTSlide : MonoBehaviour
     {
         if (index < 0 || index == slides.Count)
         {
+
+            foreach(var go in gameObjects1)
+            {
+                go.SetActive(false);
+            }
+            foreach (var go in gameObjects2)
+            {
+                go.SetActive(true);
+            }
             
-            gameobject.SetActive(false);
-            gameobject1.SetActive(true);
-            gameobject2.SetActive(false);
             TaskManager.Instance.StartTutorial();
             return;
         }
