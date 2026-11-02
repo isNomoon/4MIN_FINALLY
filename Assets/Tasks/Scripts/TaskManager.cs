@@ -27,15 +27,11 @@ public class TaskManager : MonoBehaviour
     }
 
     /// <summary>任务基类完成后调用，进入下一个</summary>
-    public void NotifyTaskCompleted(TaskBase task)
-    {
-        if (task != CurrentTask) return; // 防止旧任务误触发
-        EnterNext();
-    }
+    
 
-    private void EnterNext()
+    public void EnterNext()
     {
-        if (CurrentTask != null) CurrentTask.EndTask();
+        
 
         CurrentIndex++;
         if (CurrentIndex >= tasks.Count)

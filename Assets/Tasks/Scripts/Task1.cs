@@ -58,6 +58,7 @@ public class Task1 : TaskBase
         if (cam != null) cam.fieldOfView = normalFov;
         isPressing = false;
         base.OnEnd();
+        TaskManager.Instance.EnterNext();
     }
 
     private void Update()
@@ -97,6 +98,6 @@ public class Task1 : TaskBase
         Debug.Log($"[½ø¶È] {clickCount}/{requiredClicks}");
 
         if (clickCount >= requiredClicks)
-            CompleteTask();
+            OnEnd();
     }
 }
